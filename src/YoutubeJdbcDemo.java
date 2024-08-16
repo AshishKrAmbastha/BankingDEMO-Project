@@ -257,7 +257,7 @@ public class YoutubeJdbcDemo {
 //            System.out.println(e.getMessage());
 //        }
 
-        // transaction handling
+        // transaction handling from one account to other
 
         try {
             Connection connection = DriverManager.getConnection(url, userName, password);
@@ -289,11 +289,13 @@ public class YoutubeJdbcDemo {
                 connection.commit();
 
                 System.out.println("Transaction Successful");
+                System.out.println("Thanks! Visit Again!");
             }
             else {
                 connection.rollback();
                 System.out.println("Insufficient Balance");
                 System.out.println("Transaction Unsuccessful");
+                System.out.println("Thanks! Visit Again!");
             }
 
         }
